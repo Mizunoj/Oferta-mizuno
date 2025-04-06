@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kicks Mania | Mizuno Wave Prophecy 13 - Liquidação R$ 79,99!</title>
+    <meta name="description" content="Queima de Estoque na Kicks Mania: Tênis Mizuno Wave Prophecy 13 Masculino por R$ 79,99 (De R$ 474,99). 83% OFF! Últimas unidades. Compre já!">
+    <style>
+        :root {
+            --primary: #003366; /* Azul */
+            --secondary: #FF6600; /* Laranja Destaque */
+            --danger: #B91C1C; /* Vermelho mais escuro */
+            --danger-light: #DC2626; /* Vermelho mais claro para timer */
+            --text: #333;
+            --surface: #fff;
+            --muted-text: #666;
+            --border-color: #ddd;
+            --accent-color: #f8f8f8;
+            --star-color: #f8b400;
+            --success-color: #10B981;
+            --invalid-color: #e11d48; /* NOVO: Cor para campos inválidos */
+        }
+        html {
+            scroll-behavior: smooth; /* NOVO: Rolagem suave */
+        }
+        body {
+            font-family: 'Arial', sans-serif; margin: 0; padding: 0; color: var(--text);
+            background-color: var(--surface); line-height: 1.6;
+            -webkit-font-smoothing: antialiased; /* NOVO: Melhor renderização de fontes */
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .container { max-width: 850px; margin: 20px auto; padding: 0 15px; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .header { background: var(--primary); padding: 15px 0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .text-logo {
+            font-size: 1.9em; font-weight: 700; color: var(--surface);
+            letter-spacing: 0.5px; text-decoration: none; display: inline-block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .text-logo a { color: inherit; text-decoration: none; }
+
+        .urgency-bar {
+            background: linear-gradient(45deg, var(--danger), var(--danger-light)); color: white;
+            padding: 12px 15px; text-align: center; border-radius: 5px; margin: 20px 0;
+            font-weight: 500; font-size: 1em; display: flex; flex-direction: column;
+            align-items: center; gap: 8px;
+            box-shadow: 0 3px 8px rgba(185, 28, 28, 0.3); /* NOVO: Sombra sutil */
+        }
+        .urgency-bar.ended { /* NOVO: Estilo para quando o tempo acabar */
+            background: #6B7280;
+            box-shadow: none;
+        }
+        .urgency-text { font-weight: 600; }
+        .timer-container { display: flex; align-items: center; gap: 5px; }
+        .timer-segment {
+            background-color: rgba(0, 0, 0, 0.25); color: white; padding: 8px 12px;
+            border-radius: 5px; font-size: 1.8em; font-weight: bold; line-height: 1;
+            min-width: 55px; text-align: center;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+            transition: background-color 0.3s ease; /* NOVO: Transição */
+        }
+        .timer-separator { font-size: 1.6em; font-weight: bold; color: rgba(255, 255, 255, 0.8); padding: 0 2px; transform: translateY(-2px); }
+
+        .product-section { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 30px; }
+        @media (min-width: 700px) { .product-section { grid-template-columns: 1fr 1fr; gap: 40px; /* NOVO: Aumenta o gap */ } }
+
+        .product-images {}
+        .main-image {
+            width: 100%; border-radius: 8px; margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            transition: opacity 0.3s ease-in-out; /* NOVO: Transição mais suave */
+            cursor: zoom-in; /* NOVO: Indica que pode ser ampliada (funcionalidade não implementada aqui) */
+        }
+        /* NOVO: Galeria de Miniaturas */
+        .thumbnail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center; /* Centraliza se houver poucas imagens */
+        }
+        .thumbnail-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            opacity: 0.7;
+        }
+        .thumbnail-image:hover {
+            opacity: 1;
+            border-color: var(--secondary);
+            transform: scale(1.05);
+        }
+        .thumbnail-image.active {
+            opacity: 1;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        /* Fim Galeria Miniaturas */
+
+        .color-options { margin: 25px 0 15px 0; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .color-btn {
+            width: 40px; height: 40px; border-radius: 50%; border: 2px solid transparent;
+            cursor: pointer; transition: all 0.3s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            background-size: cover; background-position: center;
+            outline-offset: 2px; /* NOVO: Melhora visibilidade do foco */
+        }
+        .color-btn:hover { transform: scale(1.08); }
+        .color-btn.active { border-color: var(--primary); transform: scale(1.08); box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .color-btn:focus-visible { /* NOVO: Estilo de foco aprimorado */
+             outline: 2px solid var(--primary);
+        }
+
+
+        .product-details h1 { font-size: 1.8em; margin-bottom: 10px; line-height: 1.25; font-weight: 700; }
+        .liquidation-subtitle { font-size: 1.1em; color: var(--danger); font-weight: 600; margin-bottom: 15px; display: block; text-align: left; }
+        .star-rating { color: var(--star-color); font-size: 1.1em; margin-bottom: 10px; }
+        .star-rating .muted { font-size: 0.8em; color: var(--muted-text); }
+        .product-description { font-size: 1em; color: var(--text); margin-bottom: 20px; line-height: 1.6; }
+
+        .price-section {
+            background: #fffbeb; padding: 20px; border-radius: 8px; margin: 20px 0;
+            border: 2px dashed var(--danger); text-align: center;
+            animation: pulseBorder 2s infinite; /* NOVO: Animação sutil na borda */
+        }
+        /* NOVO: Animação para a borda do preço */
+        @keyframes pulseBorder {
+            0% { border-color: var(--danger); }
+            50% { border-color: rgba(185, 28, 28, 0.5); }
+            100% { border-color: var(--danger); }
+        }
+        .price-liquidation-tag { font-size: 0.9em; color: var(--danger); font-weight: bold; margin-bottom: 10px; display: block; text-transform: uppercase; }
+        .price-original { text-decoration: line-through; color: var(--muted-text); font-size: 1.1em; }
+        .price-current { font-size: 2.5em; font-weight: bold; color: var(--primary); margin: 5px 0; }
+        .price-installments { font-size: 0.95em; color: var(--text); margin-bottom: 10px; }
+        .price-discount { color: white; font-weight: bold; font-size: 1.2em; background-color: var(--danger); padding: 5px 10px; border-radius: 4px; display: inline-block; margin-top: 10px; }
+
+        #stock-popup { position: fixed; bottom: 20px; left: 20px; background-color: #fff; border: 1px solid var(--border-color); border-left: 5px solid var(--secondary); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); z-index: 1000; display: none; opacity: 0; transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; transform: translateY(20px); max-width: 300px; }
+        #stock-popup.show { display: block; opacity: 1; transform: translateY(0); }
+        .stock-popup-content { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+        #stock-popup-text { font-size: 0.9em; color: var(--text); line-height: 1.4; }
+        #stock-popup-text strong { color: var(--danger); font-weight: bold; }
+        #stock-popup-close { background: none; border: none; font-size: 1.8em; color: var(--muted-text); cursor: pointer; padding: 0; line-height: 1; opacity: 0.7; transition: color 0.2s, opacity 0.2s; /* NOVO: Transição */ }
+        #stock-popup-close:hover { opacity: 1; color: var(--danger); }
+
+        .order-form { margin-top: 20px; }
+        .form-group { margin-bottom: 15px; position: relative; /* NOVO: Para posicionar feedback */ }
+        .form-group label { display: block; margin-bottom: 6px; font-weight: bold; font-size: 0.9em; cursor: pointer; /* NOVO */ }
+        input, select {
+            width: 100%; padding: 12px; margin-top: 4px; border: 1px solid var(--border-color);
+            border-radius: 5px; box-sizing: border-box; font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* NOVO: Transição suave */
+        }
+        input:focus, select:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.15); }
+        input:focus-visible, select:focus-visible { /* NOVO: Garante visibilidade do foco */
+            border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.15);
+        }
+        input[readonly] { background-color: #eee; cursor: not-allowed; }
+
+        /* NOVO: Estilos de validação */
+        input:invalid, select:invalid {
+           /* border-color: var(--invalid-color); */ /* Evita mudar a cor antes do envio */
+        }
+        input.touched:invalid, select.touched:invalid { /* Aplica só depois de interação */
+             border-color: var(--invalid-color);
+             box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+        }
+        .cep-loading::after { /* NOVO: Indicador de carregamento CEP */
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-20%); /* Ajuste vertical */
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(0,0,0,0.1);
+            border-left-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            box-sizing: border-box;
+        }
+        @keyframes spin {
+            to { transform: translateY(-20%) rotate(360deg); }
+        }
+
+        .trust-badges { display: flex; justify-content: space-around; align-items: flex-start; margin: 25px 0; padding: 15px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); flex-wrap: wrap; gap: 15px; }
+        .trust-badge { text-align: center; font-size: 0.8em; color: var(--muted-text); flex: 1; min-width: 90px; }
+        .trust-badge img { margin: 0 auto 5px auto; height: 30px; width: auto; object-fit: contain; }
+
+        .guarantee-text { text-align: center; font-size: 0.9em; color: var(--muted-text); margin-top: 15px; margin-bottom: 10px; line-height: 1.4; }
+        .guarantee-text i { color: var(--success-color); margin: 0 3px; }
+
+        .cta-button {
+            background: var(--secondary); color: white; border: none; padding: 16px; width: 100%;
+            border-radius: 5px; font-weight: bold; font-size: 1.3em; cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* NOVO: Adiciona box-shadow na transição */
+            margin-top: 15px; text-transform: uppercase; letter-spacing: 0.5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            display: flex; /* NOVO: Para alinhar ícone */
+            align-items: center; /* NOVO */
+            justify-content: center; /* NOVO */
+            gap: 8px; /* NOVO */
+        }
+        .cta-button:hover:not(:disabled) { background: #E65100; transform: translateY(-2px); box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+        .cta-button:active:not(:disabled) { transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.15); }
+        .cta-button:disabled { /* NOVO: Estilo botão desabilitado */
+            background-color: #9CA3AF;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+        .cta-button i { /* margin-right: 8px; */ /* Removido, usando gap */ }
+
+        .additional-details { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+        .additional-details h2 { font-size: 1.4em; color: var(--primary); margin-bottom: 20px; text-align: center; }
+        .additional-details ul { list-style: none; margin: 0 0 15px 0; padding: 0; color: var(--text); }
+        .additional-details li { margin-bottom: 10px; font-size: 0.95em; padding-left: 1.3em; position: relative; }
+        .additional-details li::before { content: '✓'; color: var(--primary); position: absolute; left: 0; top: 1px; }
+        .additional-details strong { font-weight: bold; }
+
+        .simple-footer { text-align: center; margin-top: 40px; padding: 20px 15px; font-size: 0.85em; color: var(--muted-text); border-top: 1px solid var(--border-color); background-color: #f9fafb; }
+        .simple-footer p { margin: 8px 0; }
+        .footer-links a { color: var(--primary); text-decoration: underline; margin: 0 8px; font-weight: 600; transition: color 0.2s; /* NOVO */ }
+        .footer-links a:hover { color: var(--secondary); }
+        .footer-contact { margin-top: 15px; font-weight: 500; }
+        .footer-company-info { font-size: 0.9em; margin-top: 15px; line-height: 1.5; color: #4b5563; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1353677499189130');
+    fbq('track', 'PageView');
+    // Evento adicionado para rastrear visualização do conteúdo principal
+    fbq('track', 'ViewContent');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1353677499189130&ev=PageView&noscript=1"
+    /></noscript>
+    </head>
+<body>
+    <header class="header">
+        <div class="text-logo">Kicks Mania</div>
+    </header>
+
+    <div class="container">
+        <div class="urgency-bar" id="countdown">
+            <span class="urgency-text">🔥 QUEIMA DE ESTOQUE! OFERTA ACABA EM:</span>
+            <div class="timer-container">
+                <span class="timer-segment" id="minutes">00</span>
+                <span class="timer-separator">:</span>
+                <span class="timer-segment" id="seconds">00</span>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <div class="product-images">
+                <img src="https://i.ibb.co/KpMFBt4Y/2-FU-9229-989-zoom1.jpg"
+                     alt="Tênis Mizuno Wave Prophecy 13 Masculino - Grafite+Vermelho"
+                     class="main-image"
+                     id="mainImage"
+                     loading="eager"> <div class="thumbnail-container" id="thumbnailContainer">
+                    </div>
+                <div class="color-options" role="radiogroup" aria-label="Seleção de cor">
+                    <div class="color-btn active" title="Grafite+Vermelho" style="background-color: #696969;" data-color="Grafite+Vermelho" data-images='["https://i.ibb.co/KpMFBt4Y/2-FU-9229-989-zoom1.jpg", "https://i.ibb.co/RZThX87/2-FU-9229-989-zoom2.jpg"]' role="radio" aria-checked="true" tabindex="0" aria-label="Selecionar cor Grafite+Vermelho"></div>
+                    <div class="color-btn" title="Vermelho+Prata" style="background-color: #ff0000;" data-color="Vermelho+Prata" data-images='["https://i.ibb.co/gL3j6TSt/2-FU-9229-102-zoom1.jpg", "https://i.ibb.co/VWZ6Sn8j/2-FU-9229-102-zoom2.jpg"]' role="radio" aria-checked="false" tabindex="0" aria-label="Selecionar cor Vermelho+Prata"></div>
+                    <div class="color-btn" title="Branco+prata" style="background-color: #ffffff; border: 1px solid #ccc;" data-color="Branco+prata" data-images='["https://i.ibb.co/wZPbBKxF/2-FU-9229-112-zoom1.jpg", "https://i.ibb.co/397dxrKn/2-FU-9229-112-zoom2.jpg"]' role="radio" aria-checked="false" tabindex="0" aria-label="Selecionar cor Branco+prata"></div>
+                    <div class="color-btn" title="Preto+Amarelo" style="background-color: #000000;" data-color="Preto+Amarelo" data-images='["https://i.ibb.co/gFLnbsj2/2-FU-9229-172-zoom1.jpg", "https://i.ibb.co/1JhytzW6/2-FU-9229-172-zoom2.jpg"]' role="radio" aria-checked="false" tabindex="0" aria-label="Selecionar cor Preto+Amarelo"></div>
+                    <div class="color-btn" title="Cinza+Vermelho" style="background-color: #808080;" data-color="Cinza+Vermelho" data-images='["https://i.ibb.co/99c82J3X/2-FU-9229-174-zoom1.jpg", "https://i.ibb.co/wZTYSCR1/2-FU-9229-174-zoom2.jpg"]' role="radio" aria-checked="false" tabindex="0" aria-label="Selecionar cor Cinza+Vermelho"></div>
+                    <div class="color-btn" title="Verde+Preto" style="background-color: #008000;" data-color="Verde+Preto" data-images='["https://i.ibb.co/ccX4nnrn/2-FU-9229-260-zoom1.jpg", "https://i.ibb.co/23QV5Gvg/2-FU-9229-260-zoom2.jpg"]' role="radio" aria-checked="false" tabindex="0" aria-label="Selecionar cor Verde+Preto"></div>
+                    <div class="color-btn" title="Vermelho+Branco" style="background-color: #ff0000;" data-color="Vermelho+Branco" data-images='["https://i.ibb.co/qF9wt2BF/2-FU-9229-394-zoom1.jpg", "https://i.ibb.co/YT4Jky3M/2-FU-9229-394-zoom2.jpg"]' role="radio" aria-checked="false" tabindex="0" aria-label="Selecionar cor Vermelho+Branco"></div>
+                    <div class="color-btn" title="Marinho" style="background-color: #000080;" data-color="Marinho" data-images='["https://i.ibb.co/YnTYgcd/2-FU-9229-543-zoom1.jpg", "https://i.ibb.co/67VZwkM9/2-FU-9229-543-zoom2.jpg"]' role="radio" aria-checked="false" tabindex="0" aria-label="Selecionar cor Marinho"></div>
+                    <div class="color-btn" title="Preto+Laranja Escuro" style="background-color: #000000;" data-color="Preto+Laranja Escuro" data-images='["https://i.ibb.co/tw4y5YN5/2-FU-9229-782-zoom1.jpg", "https://i.ibb.co/ycW728nD/2-FU-9229-782-zoom2.jpg"]' role="radio" aria-checked="false" tabindex="0" aria-label="Selecionar cor Preto+Laranja Escuro"></div>
+                    <div class="color-btn" title="Azul+amarelo" style="background-color: #0000FF;" data-color="Azul+amarelo" data-images='["https://i.ibb.co/qMGvjy5H/2-FU-9229-852-zoom1.jpg", "https://i.ibb.co/DjZ8gr3/2-FU-9229-852-zoom2.jpg"]' role="radio" aria-checked="false" tabindex="0" aria-label="Selecionar cor Azul+amarelo"></div>
+                    <div class="color-btn" title="Marinho+Branco" style="background-color: #000080;" data-color="Marinho+Branco" data-images='["https://i.ibb.co/KkjLmTR/2-FU-9229-036-zoom1.jpg", "https://i.ibb.co/HLMywp6y/2-FU-9229-036-zoom2.jpg"]' role="radio" aria-checked="false" tabindex="0" aria-label="Selecionar cor Marinho+Branco"></div>
+                    <div class="color-btn" title="Preto+Azul" style="background-color: #000000;" data-color="Preto+Azul" data-images='["https://i.ibb.co/5h5cTK9M/2-FU-9229-118-zoom1.jpg", "https://i.ibb.co/Kc1VVLhD/2-FU-9229-118-zoom2.jpg"]' role="radio" aria-checked="false" tabindex="0" aria-label="Selecionar cor Preto+Azul"></div>
+                 </div>
+            </div>
+
+            <div class="product-details">
+                 <h1>Tênis Mizuno Wave Prophecy 13</h1>
+                 <span class="liquidation-subtitle">Oportunidade Única - Liquidação Total!</span>
+                 <div class="star-rating"> ★★★★☆ <span class="muted">(4.3 / 5.0 Avaliação Média)</span> </div>
+                 <p class="product-description"> O futuro te aguarda! A nova versão do Wave Prophecy 13 traz cabedal em mesh respirável, entressola U4ic leve com alta absorção de impacto e a placa Infinity Wave para estabilidade e amortecimento superiores. Palmilha anatômica e tecnologia SmoothRide garantem conforto e flexibilidade, enquanto o solado X10 oferece máxima durabilidade. </p>
+                 <div class="price-section">
+                     <div class="price-liquidation-tag">Preço para ZERAR o estoque!</div>
+                     <div class="price-original">De R$ 474,99</div>
+                     <div class="price-current">Por R$ 79,99</div>
+                     <div class="price-installments">Ou 12x de R$ 6,67 sem juros*</div>
+                     <div class="price-discount">83% DE DESCONTO!</div>
+                 </div>
+                 <form class="order-form" action="https://pay.kiwify.com.br/mDlJ5aE" method="GET" id="purchaseForm" novalidate> <div class="form-group">
+                         <label for="selectedColorDisplay">Cor Selecionada:</label>
+                         <input type="text" class="form-input" id="selectedColorDisplay" value="Grafite+Vermelho" readonly>
+                         <input type="hidden" id="selectedColorValue" name="color" value="Grafite+Vermelho">
+                     </div>
+                     <div class="form-group">
+                         <label for="sizeSelect">Tamanho:</label>
+                         <select name="size" id="sizeSelect" class="form-select" required>
+                             <option value="" disabled selected>Selecione o tamanho</option> <option value="38">38</option><option value="39">39</option><option value="40">40</option>
+                             <option value="41">41</option><option value="42">42</option><option value="43">43</option>
+                             <option value="44">44</option>
+                         </select>
+                         <span class="validation-message" aria-live="polite"></span> </div>
+                     <div class="form-group">
+                         <label for="cepInput">CEP:</label>
+                         <input type="text" name="cep" id="cepInput" class="form-input" required pattern="\d{5}-?\d{3}" placeholder="00000-000" maxlength="9" inputmode="numeric">
+                          <span class="validation-message" aria-live="polite"></span> </div>
+                     <div class="form-group">
+                         <label for="addressInput">Endereço Completo:</label>
+                         <input type="text" name="address" id="addressInput" class="form-input" required placeholder="Rua, Número, Bairro, Cidade - UF">
+                         <span class="validation-message" aria-live="polite"></span> </div>
+
+                     <div class="form-group">
+                         <label for="nameInput">Nome Completo:</label>
+                         <input type="text" name="name" id="nameInput" class="form-input" required placeholder="Digite seu nome completo">
+                          <span class="validation-message" aria-live="polite"></span> </div>
+                     <div class="form-group">
+                         <label for="emailInput">E-mail:</label>
+                         <input type="email" name="email" id="emailInput" class="form-input" required placeholder="seuemail@dominio.com">
+                          <span class="validation-message" aria-live="polite"></span> </div>
+                     <div class="trust-badges">
+                          <div class="trust-badge"> <img src="https://olympikus.vtexassets.com/arquivos/icon-footer-vtex-pci.svg" alt="Pagamento Seguro PCI" loading="lazy"> Pagamento Seguro </div>
+                          <div class="trust-badge"> <img src="https://i.ibb.co/HLNqh3js/Lets-Encrypt.png" alt="Site Seguro SSL" loading="lazy"> Site 100% Seguro </div>
+                          <div class="trust-badge"> <img src="https://i.ibb.co/zH6n6HpS/logo-Reclame-Aqui.png" alt="Compra Garantida Reclame Aqui" loading="lazy"> Compra Garantida </div>
+                     </div>
+                      <p class="guarantee-text"> <i class="fas fa-shield-alt"></i> Compra 100% Segura | <i class="fas fa-undo-alt"></i> Devolução Grátis em 7 Dias | <i class="fas fa-check-circle"></i> Produto Original Mizuno com Garantia </p>
+                     <button type="submit" class="cta-button">
+                         <i class="fas fa-bolt"></i>
+                         <span>QUERO O MEU POR R$ 79,99!</span>
+                     </button>
+                     <p style="text-align: center; font-size: 0.8em; margin-top: 10px;">*Pagamento seguro processado via plataforma Kiwify.</p>
+                 </form>
+            </div>
+        </div>
+
+        <div class="additional-details">
+            <h2 style="color: var(--danger);">Por Que Esse Preço Incrível?</h2>
+            <p style="text-align: center; margin-bottom: 20px; font-size: 1.1em;">Conseguimos uma condição especial com nosso fornecedor internacional para uma **grande quantidade** do Mizuno Wave Prophecy 13. Para **renovar nosso estoque rapidamente**, estamos oferecendo estas últimas unidades a um **preço de liquidação total**, muito abaixo do normal. É sua chance única de garantir essa lenda da corrida por um valor inacreditável!</p>
+            <h2>Especificações Técnicas</h2>
+            <ul>
+                <li><strong>Marca:</strong> Mizuno</li> <li><strong>Modelo:</strong> Wave Prophecy 13</li> <li><strong>Gênero:</strong> Masculino</li>
+                <li><strong>Indicado para:</strong> Corrida (Amortecimento)</li> <li><strong>Terreno:</strong> Rua ou Esteira</li> <li><strong>Pisada:</strong> Neutra</li>
+                <li><strong>Tecnologias:</strong> Wave, U4ic, Smooth Ride, X10</li>
+                <li><strong>Composição:</strong> Cabedal em mesh; Entressola U4ic e Placa Infinity Wave; Solado X10.</li>
+                <li><strong>Drop:</strong> 10,5 mm</li> <li><strong>Peso Aproximado:</strong> 360g (varia com numeração)</li>
+                <li><strong>Garantia do Fabricante:</strong> Contra Defeito de Fabricação</li> <li><strong>Origem:</strong> Importado (Ajustado conforme descrição)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="stock-popup">
+        <div class="stock-popup-content">
+            <span id="stock-popup-text">🔥 CORRA! Apenas <strong>X</strong> unidades restantes nesta oferta!</span>
+            <button id="stock-popup-close" aria-label="Fechar Pop-up">&times;</button>
+        </div>
+    </div>
+
+    <footer class="simple-footer">
+        <p><strong>Kicks Mania Comércio de Calçados Ltda.</strong></p>
+        <div class="footer-contact">
+            <p>Atendimento: <a href="mailto:atendimento@kicksmania.com.br">atendimento@kicksmania.com.br</a> | Tel: (11) 3667-8923</p>
+            <p>Horário de Funcionamento: Segunda a Sexta: 10h às 19h | Sábado: 11h às 16h</p>
+        </div>
+        <p class="footer-company-info">
+            CNPJ: 47.892.135/0001-56 | IE: 148.927.365.204<br>
+            Endereço: Rua Vitorino Carmilo, 789, Barra Funda, São Paulo - SP, CEP: 01153-000
+        </p>
+        <div class="footer-links">
+            <a href="#">Política de Troca e Devolução</a> |
+            <a href="#">Política de Envio</a> |
+            <a href="#">Política de Privacidade</a> |
+            <a href="#">Termos e Condições</a>
+        </div>
+        <p>&copy; <span id="currentYear">2025</span> Kicks Mania. Todos os direitos reservados.</p> <p style="font-size: 0.8em; margin-top: 10px;">Oferta de liquidação válida enquanto durarem os estoques ou até o fim do cronômetro.</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Elementos DOM ---
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+        const urgencyBarEl = document.getElementById('countdown');
+        const formEl = document.getElementById('purchaseForm');
+        const ctaButton = formEl ? formEl.querySelector('.cta-button') : null;
+        const colorSwatches = document.querySelectorAll('.color-btn');
+        const mainImageEl = document.getElementById('mainImage');
+        const thumbnailContainerEl = document.getElementById('thumbnailContainer'); // NOVO
+        const selectedColorDisplayEl = document.getElementById('selectedColorDisplay');
+        const selectedColorValueEl = document.getElementById('selectedColorValue');
+        const cepInputEl = document.getElementById('cepInput');
+        const addressInputEl = document.getElementById('addressInput');
+        const stockPopup = document.getElementById('stock-popup');
+        const stockPopupText = document.getElementById('stock-popup-text');
+        const stockPopupClose = document.getElementById('stock-popup-close');
+        const currentYearEl = document.getElementById('currentYear'); // NOVO
+
+        // --- Configurações ---
+        let timeLeftInSeconds = 30 * 60; // 30 minutos
+        let countdownInterval;
+        let stockCount = 12; // Estoque inicial simulado
+        let stockIntervalTimeout; // NOVO: Para controlar timeout recursivo
+        const initialColorData = colorSwatches[0] ? JSON.parse(colorSwatches[0].dataset.images || '[]') : []; // NOVO
+
+        // --- Funções ---
+
+        // Atualiza o contador regressivo
+        function updateCountdown() {
+            if (timeLeftInSeconds <= 0) {
+                clearInterval(countdownInterval);
+                if (urgencyBarEl) {
+                    urgencyBarEl.innerHTML = `<span class="urgency-text">✖️ QUEIMA DE ESTOQUE ENCERRADA! ✖️</span>`;
+                    urgencyBarEl.classList.add('ended'); // NOVO
+                }
+                if (ctaButton) {
+                    ctaButton.disabled = true;
+                    ctaButton.querySelector('span').textContent = "Oferta Encerrada"; // NOVO: Acessa span interno
+                }
+                if (minutesEl) minutesEl.textContent = "00";
+                if (secondsEl) secondsEl.textContent = "00";
+                return;
+            }
+            timeLeftInSeconds--;
+            const minutes = Math.floor(timeLeftInSeconds / 60);
+            const seconds = timeLeftInSeconds % 60;
+            if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
+            if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // NOVO: Atualiza a galeria de miniaturas
+        function updateThumbnails(imageUrls = [], selectedImageUrl) {
+            if (!thumbnailContainerEl) return;
+            thumbnailContainerEl.innerHTML = ''; // Limpa miniaturas existentes
+            imageUrls.forEach(url => {
+                const thumb = document.createElement('img');
+                thumb.src = url;
+                thumb.alt = "Miniatura do produto";
+                thumb.className = 'thumbnail-image';
+                thumb.loading = 'lazy'; // NOVO: Carregamento preguiçoso para miniaturas
+                if (url === selectedImageUrl) {
+                    thumb.classList.add('active'); // Marca a miniatura ativa
+                }
+                thumb.addEventListener('click', () => {
+                    if (mainImageEl) {
+                        mainImageEl.style.opacity = 0;
+                         setTimeout(() => {
+                            mainImageEl.src = url;
+                            mainImageEl.style.opacity = 1;
+                            // Atualiza a miniatura ativa
+                            document.querySelectorAll('.thumbnail-image.active').forEach(activeThumb => activeThumb.classList.remove('active'));
+                            thumb.classList.add('active');
+                         }, 150); // Sincroniza com transição CSS
+                    }
+                });
+                thumbnailContainerEl.appendChild(thumb);
+            });
+        }
+
+        // Lida com a seleção de cor
+        function handleColorSelection() {
+            if (!this.classList.contains('active')) {
+                colorSwatches.forEach(s => { s.classList.remove('active'); s.setAttribute('aria-checked', 'false'); });
+                this.classList.add('active');
+                this.setAttribute('aria-checked', 'true');
+                try {
+                    const images = JSON.parse(this.dataset.images || '[]');
+                    const firstImage = images.length > 0 ? images[0] : '#';
+                    const colorName = this.dataset.color || 'Indefinida';
+
+                    if (mainImageEl) {
+                        mainImageEl.style.opacity = 0;
+                        setTimeout(() => {
+                            mainImageEl.src = firstImage;
+                            mainImageEl.alt = `Tênis Mizuno Wave Prophecy 13 Masculino - ${colorName}`;
+                            mainImageEl.style.opacity = 1;
+                            updateThumbnails(images, firstImage); // NOVO: Atualiza miniaturas
+                        }, 150); // Tempo para efeito fade out
+                    } else {
+                         updateThumbnails(images, firstImage); // NOVO: Atualiza mesmo sem imagem principal
+                    }
+
+                    if (selectedColorDisplayEl) selectedColorDisplayEl.value = colorName;
+                    if (selectedColorValueEl) selectedColorValueEl.value = colorName;
+
+                     // NOVO: Rastreia a seleção de cor no Pixel (se necessário)
+                     if (typeof fbq === 'function') {
+                         fbq('trackCustom', 'ColorSelected', { product_color: colorName });
+                     }
+
+                } catch (e) { console.error("Erro ao processar dados JSON das imagens:", e); }
+            }
+        }
+
+        // Formata o CEP enquanto digita
+        function formatCEP(input) {
+            let value = input.value.replace(/\D/g, '').slice(0, 8);
+            if (value.length > 5) value = `${value.slice(0, 5)}-${value.slice(5)}`;
+            input.value = value;
+        }
+
+        // Busca dados do CEP via API ViaCEP
+        async function buscarCEP(cep) {
+            if (!addressInputEl || !cepInputEl) return;
+            cep = cep.replace(/\D/g, '');
+            const cepGroup = cepInputEl.closest('.form-group'); // NOVO
+
+            if (cep.length === 8) {
+                addressInputEl.value = 'Buscando endereço...';
+                addressInputEl.disabled = true;
+                if(cepGroup) cepGroup.classList.add('cep-loading'); // NOVO: Adiciona classe de loading
+
+                try {
+                    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    const data = await response.json();
+
+                    if (data.erro) {
+                        showFieldError(cepInputEl, 'CEP não encontrado.'); // NOVO
+                        addressInputEl.value = '';
+                        addressInputEl.placeholder = 'Digite seu endereço completo';
+                    } else {
+                        clearFieldError(cepInputEl); // NOVO
+                        addressInputEl.value = [data.logradouro, data.bairro, data.localidade ? `${data.localidade} - ${data.uf}` : ''].filter(Boolean).join(', ');
+                        // NOVO: Marca o campo como "tocado" para validação visual
+                        addressInputEl.classList.add('touched');
+                        clearFieldError(addressInputEl); // Limpa erro se houver
+                    }
+                } catch (error) {
+                    console.error('Erro ao buscar CEP:', error);
+                    showFieldError(cepInputEl, 'Erro ao buscar CEP. Tente novamente.'); // NOVO
+                    addressInputEl.value = '';
+                    addressInputEl.placeholder = 'Digite seu endereço completo';
+                } finally {
+                    addressInputEl.disabled = false;
+                    if (cepGroup) cepGroup.classList.remove('cep-loading'); // NOVO: Remove classe de loading
+                    if (addressInputEl.value === 'Buscando endereço...') addressInputEl.value = '';
+                }
+            } else if (cep.length > 0) {
+                addressInputEl.value = ''; // Limpa se CEP incompleto
+            } else {
+                 addressInputEl.value = '';
+                 clearFieldError(cepInputEl); // NOVO: Limpa erro se campo vazio
+            }
+        }
+
+        // Mostra o pop-up de estoque
+        function showStockPopup() {
+            if (stockPopup && stockPopupText && stockCount > 0 && sessionStorage.getItem('stockPopupClosed') !== 'true') {
+                stockPopupText.innerHTML = `🔥 CORRA! Restam apenas <strong>${stockCount}</strong> unidades nesta oferta!`;
+                stockPopup.classList.add('show');
+                 scheduleStockDecrease(); // NOVO: Agenda a próxima diminuição
+            }
+        }
+
+        // NOVO: Função para diminuir estoque simulado em intervalos mais aleatórios
+        function scheduleStockDecrease() {
+             clearTimeout(stockIntervalTimeout); // Cancela timeout anterior se houver
+             if (stockCount > 1) {
+                const randomDelay = 15000 + Math.random() * 20000; // Entre 15s e 35s
+                stockIntervalTimeout = setTimeout(() => {
+                     stockCount--;
+                     if (stockPopup.classList.contains('show')) { // Atualiza só se visível
+                         stockPopupText.innerHTML = `🔥 CORRA! Restam apenas <strong>${stockCount}</strong> unidades nesta oferta!`;
+                     }
+                     scheduleStockDecrease(); // Agenda a próxima
+                 }, randomDelay);
+             }
+        }
+
+        // Fecha o pop-up de estoque
+        function closeStockPopup() {
+             if (stockPopup) {
+                stockPopup.classList.remove('show');
+                clearTimeout(stockIntervalTimeout); // NOVO: Para a contagem ao fechar
+                try { sessionStorage.setItem('stockPopupClosed', 'true'); }
+                catch (e) { console.warn("SessionStorage não está disponível."); }
+             }
+        }
+
+        // NOVO: Funções de validação de formulário
+        function showFieldError(inputElement, message) {
+            const formGroup = inputElement.closest('.form-group');
+            if (!formGroup) return;
+            const errorElement = formGroup.querySelector('.validation-message');
+            inputElement.classList.add('touched'); // Marca como tocado para mostrar erro
+            inputElement.setAttribute('aria-invalid', 'true');
+             if (errorElement) {
+                errorElement.textContent = message;
+            }
+        }
+
+        function clearFieldError(inputElement) {
+            const formGroup = inputElement.closest('.form-group');
+             if (!formGroup) return;
+            const errorElement = formGroup.querySelector('.validation-message');
+            inputElement.classList.remove('touched'); // Remove a classe se válido
+            inputElement.removeAttribute('aria-invalid');
+             if (errorElement) {
+                 errorElement.textContent = '';
+             }
+        }
+
+        function validateField(inputElement) {
+            if (!inputElement.checkValidity()) {
+                 // Usa a mensagem de validação padrão do browser ou uma customizada
+                showFieldError(inputElement, inputElement.validationMessage || 'Campo inválido.');
+                return false;
+            } else {
+                clearFieldError(inputElement);
+                return true;
+            }
+        }
+
+        function validateForm(form) {
+            let isFormValid = true;
+            form.querySelectorAll('input[required], select[required], input[pattern]').forEach(field => {
+                 // Adiciona 'touched' a todos para garantir que erros apareçam na tentativa de envio
+                field.classList.add('touched');
+                if (!validateField(field)) {
+                    isFormValid = false;
+                 }
+            });
+            return isFormValid;
+        }
+
+
+        // --- Inicialização e Event Listeners ---
+
+        // Inicia o contador
+        if (minutesEl && secondsEl) {
+            updateCountdown(); // Atualiza imediatamente
+            countdownInterval = setInterval(updateCountdown, 1000);
+        }
+
+        // Atualiza o ano no rodapé
+        if (currentYearEl) {
+             currentYearEl.textContent = new Date().getFullYear();
+        }
+
+        // Configura listeners para seleção de cor
+        colorSwatches.forEach(swatch => {
+            swatch.addEventListener('click', handleColorSelection);
+            swatch.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleColorSelection.call(swatch); }});
+        });
+
+        // NOVO: Inicializa as miniaturas para a cor padrão
+        updateThumbnails(initialColorData, initialColorData[0]);
+
+        // Configura listeners para o campo CEP
+        if (cepInputEl) {
+            cepInputEl.addEventListener('input', () => formatCEP(cepInputEl));
+            cepInputEl.addEventListener('blur', () => buscarCEP(cepInputEl.value));
+            cepInputEl.addEventListener('focus', () => clearFieldError(cepInputEl)); // Limpa erro ao focar
+        }
+        if (addressInputEl){
+            addressInputEl.addEventListener('focus', () => clearFieldError(addressInputEl)); // Limpa erro ao focar
+        }
+
+
+        // Mostra pop-up de estoque após um delay inicial
+        if (stockPopup && sessionStorage.getItem('stockPopupClosed') !== 'true') {
+            setTimeout(() => {
+                if (Math.random() < 0.7) { // 70% de chance de mostrar
+                     showStockPopup();
+                 }
+            }, 7000); // Delay de 7 segundos
+        }
+
+        // Listener para fechar pop-up
+        if (stockPopupClose) {
+            stockPopupClose.addEventListener('click', closeStockPopup);
+        }
+
+        // NOVO: Validação do formulário no envio e interação
+        if (formEl) {
+            // Adiciona listener 'blur' para validar campos após interação
+            formEl.querySelectorAll('input[required], select[required], input[pattern]').forEach(field => {
+                 field.addEventListener('blur', () => {
+                     field.classList.add('touched'); // Marca como tocado ao perder foco
+                     validateField(field);
+                 });
+                 // Limpa erro ao começar a digitar/mudar seleção
+                 field.addEventListener('input', () => clearFieldError(field));
+                 if (field.tagName === 'SELECT') {
+                     field.addEventListener('change', () => clearFieldError(field));
+                 }
+            });
+
+            formEl.addEventListener('submit', (event) => {
+                 if (!validateForm(formEl)) {
+                     event.preventDefault(); // Impede o envio se inválido
+                     // Foca no primeiro campo inválido para acessibilidade
+                     const firstInvalidField = formEl.querySelector('[aria-invalid="true"]');
+                     if(firstInvalidField) firstInvalidField.focus();
+                     console.log("Formulário inválido. Envio bloqueado.");
+                 } else {
+                     // Opcional: Desabilitar botão para evitar duplo clique
+                     if(ctaButton) {
+                        ctaButton.disabled = true;
+                        ctaButton.querySelector('span').textContent = "Processando...";
+                     }
+                     // Envia evento de Iniciar Checkout para o Pixel
+                     if (typeof fbq === 'function') {
+                         fbq('track', 'InitiateCheckout');
+                     }
+                     console.log("Formulário válido. Permitindo envio...");
+                     // Permite o envio padrão (GET para Kiwify neste caso)
+                 }
+            });
+        }
+
+        // Meta Pixel Evento ViewContent (Garantia extra)
+        if (typeof fbq === 'function') {
+             fbq('track', 'ViewContent');
+        }
+
+    }); // Fim DOMContentLoaded
+    </script>
+
+</body>
+</html>
